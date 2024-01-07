@@ -30,6 +30,6 @@
 const http = require("http")
 
 http.createServer((req,res)=>{
-    res.write("<h1>Hello my name is Sana Ullah</h1>");
+    res.write("<h1 style='color: blue; text-align: center;'>Hello my name is Sana Ullah</h1>");
     res.end();
 }).listen(4500);
