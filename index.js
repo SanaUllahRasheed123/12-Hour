@@ -13,8 +13,15 @@
 // // console.log(app.z)
 
 
-const fs = require('fs')
+// const fs = require('fs')
 
-fs.writeFileSync("new.txt","Hello Sana Ulllah Rasheed")
-console.log("-->",__dirname)
-console.log("-->",__filename)
+// fs.writeFileSync("new.txt","Hello Sana Ulllah Rasheed")
+// console.log("-->",__dirname)
+// console.log("-->",__filename)
+
+const http = require("http")
+
+http.createServer((req,res)=>{
+    res.write("Hello this is Sana Ullah ");
+    res.end();
+}).listen(4500);
