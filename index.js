@@ -19,9 +19,17 @@
 // console.log("-->",__dirname)
 // console.log("-->",__filename)
 
+// const http = require("http")
+
+// http.createServer((req,res)=>{
+//     res.write("Hello this is Sana Ullah ");
+//     res.end();
+// }).listen(4500);
+
+
 const http = require("http")
 
 http.createServer((req,res)=>{
-    res.write("Hello this is Sana Ullah ");
+    res.write("<h1>Hello my name is Sana Ullah</h1>");
     res.end();
 }).listen(4500);
