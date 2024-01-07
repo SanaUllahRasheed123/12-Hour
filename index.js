@@ -29,7 +29,14 @@
 
 const http = require("http")
 
-http.createServer((req,res)=>{
-    res.write("<h1 style='color: blue; text-align: center;'>Hello my name is Sana Ullah</h1>");
+function dataControl(req,res){
+    res.write("<h1 style='color:blue;border:2px dotted green;'>Hello, This is Sana Ullah</h1>");
     res.end();
-}).listen(4500);
+}
+
+http.createServer(dataControl).listen(4500)
+
+// http.createServer((req,res)=>{
+//     res.write("<h1 style='color: blue; text-align: center;'>Hello my name is Sana Ullah</h1>");
+//     res.end();
+// }).listen(4500);
