@@ -61,6 +61,7 @@
 
 /******************************Post Man****************************************************************** */
 /******************************also created a file with data.js ****************************************************************** */
+/****************************** http://localhost:5000/  paste this url in postman and select the get methode and press send button ****************************************************************** */
 
 const http = require("http")
 const data = require('./data')
