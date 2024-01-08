@@ -42,15 +42,30 @@
 // }).listen(4500);
 
 
-var colors = require('colors');
+// var colors = require('colors');
  
-console.log('hello'.green); // outputs green text
-console.log('i like cake and pies'.underline.red) // outputs red underlined text
-console.log('inverse the color'.inverse); // inverses the color
-console.log('OMG Rainbows!'.rainbow); // rainbow
-console.log('Run the trap'.trap); // Drops the bass
+// console.log('hello'.green); // outputs green text
+// console.log('i like cake and pies'.underline.red) // outputs red underlined text
+// console.log('inverse the color'.inverse); // inverses the color
+// console.log('OMG Rainbows!'.rainbow); // rainbow
+// console.log('Run the trap'.trap); // Drops the bass
+// console.log("Sana Ullah" .rainbow)
 
-console.log(5+5)
+// console.log(5+5)
+// console.log("i'm happy ")
+// console.log("i'm happy thank your ")
+
+
+// console.log('hello'.green); // outputs green text
+
+const http = require("http")
+
+http.createServer((req,res)=>{
+    res.writeHead(200,{"Content-Type":'application\json'});
+    res.write(JSON.stringify({name:"SanaUllah",email:"sana@test.com"}))
+    res.end();
+}).listen(5000)
+
 
 
 
