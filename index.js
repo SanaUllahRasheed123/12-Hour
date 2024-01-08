@@ -59,10 +59,11 @@
 // console.log('hello'.green); // outputs green text
 
 const http = require("http")
+const data = require('./data')
 
 http.createServer((req,res)=>{
-    res.writeHead(200,{"Content-Type":'application\json'});
-    res.write(JSON.stringify({name:"SanaUllah",email:"sana@test.com"}))
+    res.writeHead(201,{"Content-Type":'application\json'});
+    res.write(JSON.stringify(data))
     res.end();
 }).listen(5000)
 
