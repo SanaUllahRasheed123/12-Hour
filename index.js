@@ -74,10 +74,24 @@
 const fs = require('fs')
 
 const input = process.argv;
-fs.writeFileSync(input[2], input[3])
+
+if(input[2]=='add'){
+    fs.writeFileSync(input[3], input[4])
+}else if(input[2]=='remove'){
+    fs.unlinkSync(input[3])
+}else{
+    console.log("invalid input")
+}
+//use this command in terminal to add/remove.
+
+//node index.js add orange.txt "This is a orange file" 
+//it is important to note that while writing 
+//node index.js remove orange
+
+
 
 //2nd parameter is for file name and 3rd is for text of file
-//1st parameter is for add/remove for file but described here
+//1st parameter is for add/remove for file 
 
 
 
