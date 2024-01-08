@@ -58,6 +58,33 @@
 
 // console.log('hello'.green); // outputs green text
 
+// const http = require("http")
+// const data = require('./data')
+
+// http.createServer((req,res)=>{
+//     res.writeHead(201,{"Content-Type":'application\json'});
+//     res.write(JSON.stringify(data))
+//     res.end();
+// }).listen(5000)
+
+
+// console.log(process.argv[1])
+//argv means argument value
+
+const fs = require('fs')
+
+const input = process.argv;
+fs.writeFileSync(input[2], input[3])
+
+//2nd parameter is for file name and 3rd is for text of file
+//1st parameter is for add/remove for file but described here
+
+
+
+//node index.js apple.txt "Hey this is Sana Ullah"   run this command in terminal
+
+
+
 
 
 
