@@ -71,17 +71,17 @@
 // console.log(process.argv[1])
 //argv means argument value
 
-const fs = require('fs')
+// const fs = require('fs')
 
-const input = process.argv;
+// const input = process.argv;
 
-if(input[2]=='add'){
-    fs.writeFileSync(input[3], input[4])
-}else if(input[2]=='remove'){
-    fs.unlinkSync(input[3])
-}else{
-    console.log("invalid input")
-}
+// if(input[2]=='add'){
+//     fs.writeFileSync(input[3], input[4])
+// }else if(input[2]=='remove'){
+//     fs.unlinkSync(input[3])
+// }else{
+//     console.log("invalid input")
+// }
 //use this command in terminal to add/remove.
 
 //node index.js add orange.txt "This is a orange file" 
@@ -99,7 +99,9 @@ if(input[2]=='add'){
 
 
 
+const fs = require('fs')
 
+fs.writeFileSync('hello.txt',"this is a hello file")
 
 
 
