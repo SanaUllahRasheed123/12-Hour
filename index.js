@@ -68,5 +68,8 @@ http.createServer((req,res)=>{
 }).listen(5000)
 
 
+console.log("1st");
+console.log("2nd");
+console.log("3rd");
 
 
