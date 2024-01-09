@@ -121,15 +121,33 @@
 
 // fs.writeFileSync(`${dirPath}/apple.txt`, "This is apple file yar  ")
 
+
+
 const fs = require('fs')
 const path = require('path')
 
-const dirPath = path.join(__dirname,"crud")
+const dirPath = path.join(__dirname,'crud')
+const filePath = `${dirPath}/new.txt`
 
-fs.writeFileSync(`${dirPath}/mylogin.txt`,"this is login page")
+//file created
+// fs.writeFileSync(filePath, "This is a text file")
 
+//file read
 
+// fs.readFile(filePath,(err,item)=>{
+//     console.log(item)
+// })
 
+// it shows answer in buffer 
+//PS C:\Users\lenovo\OneDrive\Desktop\12-hour> node index.js   
+//<Buffer 54 68 69 73 20 69 73 20 61 20 74 65 78 74 20 66 69 6c 65>
+
+fs.readFile(filePath,'utf-8',(err,item)=>{
+    console.log(item)
+})
+
+//by adding third parameter utf-8 it does not give answer in buffer
+ 
 
 
 
