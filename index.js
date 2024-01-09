@@ -149,8 +149,13 @@ const filePath = `${dirPath}/new.txt`
 //by adding third parameter utf-8 it does not give answer in buffer
  
 
-fs.appendFile(filePath,'and file name is apple.txt',(err)=>{
-    if(!err) console.log("file is updated")
+// fs.appendFile(filePath,'and file name is new.txt',(err)=>{
+//     if(!err) console.log("file is updated")
+// })
+//File updation
+
+fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
+    if(!err) console.log("file name is updated")
 })
 
 
