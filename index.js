@@ -149,14 +149,19 @@ const filePath = `${dirPath}/new.txt`
 //by adding third parameter utf-8 it does not give answer in buffer
  
 
+//File updation
 // fs.appendFile(filePath,'and file name is new.txt',(err)=>{
 //     if(!err) console.log("file is updated")
 // })
-//File updation
 
-fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
-    if(!err) console.log("file name is updated")
-})
+
+// file rename done
+// fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
+//     if(!err) console.log("file name is updated")
+// })
+
+fs.unlinkSync(`${dirPath}/fruit.txt`)
+
 
 
 
