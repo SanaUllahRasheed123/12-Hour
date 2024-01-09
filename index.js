@@ -67,7 +67,13 @@
 //     res.end();
 // }).listen(5000)
 
+console.log("start logic")
 
+setTimeout(()=>{
+console.log("middle logic")
+
+},2000)
+console.log("3rd logic")
 
 
 
