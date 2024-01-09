@@ -69,7 +69,11 @@ http.createServer((req,res)=>{
 
 
 console.log("1st");
-console.log("2nd");
+
+setTimeout(()=>{
+    console.log("2nd");
+
+},2000)
 console.log("3rd");
 
 
