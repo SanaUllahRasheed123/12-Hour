@@ -86,6 +86,7 @@ const app = express();
 
 
 app.get('',(req,res)=>{
+    console.log("data sent by --->>>",req.query.name)
     res.send("Welcome to Main page")
 })
 
@@ -101,6 +102,6 @@ app.get("/about-us",(req,res)=>{
     res.send("Welcome to about-us page")
 })
 
-app.listen(4200);
+app.listen(5000);
 
 
