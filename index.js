@@ -86,12 +86,19 @@ const app = express();
 
 
 app.get('',(req,res)=>{
-    console.log("data sent by --->>>",req.query.name)
-    res.send("Welcome to Main page")
+    // console.log("data sent by --->>>",req.query.name)
+    res.send(`
+    <h1>Weolcome to home page</h1>
+    <input type="text" placeholder="enter name" />
+    `)
 })
 
 app.get("/home",(req,res)=>{
-    res.send("Welcome to home page")
+    res.send(`
+    <a href="/">Go to home page<a/>
+    <input type="text" value="${req.query.name}" />
+
+    `)
 })
 
 app.get('/help',(req,res)=>{
