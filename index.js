@@ -142,12 +142,16 @@ const filePath = `${dirPath}/new.txt`
 //PS C:\Users\lenovo\OneDrive\Desktop\12-hour> node index.js   
 //<Buffer 54 68 69 73 20 69 73 20 61 20 74 65 78 74 20 66 69 6c 65>
 
-fs.readFile(filePath,'utf-8',(err,item)=>{
-    console.log(item)
-})
+// fs.readFile(filePath,'utf-8',(err,item)=>{
+//     console.log(item)
+// })
 
 //by adding third parameter utf-8 it does not give answer in buffer
  
+
+fs.appendFile(filePath,'and file name is apple.txt',(err)=>{
+    if(!err) console.log("file is updated")
+})
 
 
 
