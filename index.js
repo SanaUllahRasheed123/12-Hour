@@ -58,22 +58,26 @@
 
 // console.log('hello'.green); // outputs green text
 
-const http = require("http")
-const data = require('./data')
 
-http.createServer((req,res)=>{
-    res.writeHead(201,{"Content-Type":'application\json'});
-    res.write(JSON.stringify(data))
-    res.end();
-}).listen(5000)
+//
+// const http = require("http")
+// const data = require('./data')
+
+// http.createServer((req,res)=>{
+//     res.writeHead(201,{"Content-Type":'application\json'});
+//     res.write(JSON.stringify(data))
+//     res.end();
+// }).listen(5000)
 
 
-console.log("1st");
 
-setTimeout(()=>{
-    console.log("2nd");
+//how nodejs works
+// console.log("1st");
 
-},2000)
-console.log("3rd");
+// setTimeout(()=>{
+//     console.log("2nd");
+
+// },2000)
+// console.log("3rd");
 
 
