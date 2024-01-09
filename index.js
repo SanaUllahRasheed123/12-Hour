@@ -80,35 +80,48 @@
 // },2000)
 // console.log("3rd");
 
-const express = require("express")
+// const express = require("express")
+
+// const app = express();
+
+
+// app.get('',(req,res)=>{
+//     // console.log("data sent by --->>>",req.query.name)
+//     res.send(`
+//     <h1>Weolcome to home page</h1>
+//     <input type="text" placeholder="enter name" />
+//     `)
+// })
+
+// app.get("/home",(req,res)=>{
+//     res.send(`
+//     <a href="/">Go to home page<a/>
+//     <input type="text" value="${req.query.name}" />
+
+//     `)
+// })
+
+// app.get('/help',(req,res)=>{
+//     res.send("Welcome to help page")
+// })
+
+// app.get("/about-us",(req,res)=>{
+//     res.send("Welcome to about-us page")
+// })
+
+// app.listen(5000);
+
+
+const express = require('express')
+const path = require("path")
+
 
 const app = express();
 
+const publicPath = path.join(__dirname,'public');
 
-app.get('',(req,res)=>{
-    // console.log("data sent by --->>>",req.query.name)
-    res.send(`
-    <h1>Weolcome to home page</h1>
-    <input type="text" placeholder="enter name" />
-    `)
-})
 
-app.get("/home",(req,res)=>{
-    res.send(`
-    <a href="/">Go to home page<a/>
-    <input type="text" value="${req.query.name}" />
-
-    `)
-})
-
-app.get('/help',(req,res)=>{
-    res.send("Welcome to help page")
-})
-
-app.get("/about-us",(req,res)=>{
-    res.send("Welcome to about-us page")
-})
-
-app.listen(5000);
+app.use(express.static(publicPath));
+app.listen(5000)
 
 
