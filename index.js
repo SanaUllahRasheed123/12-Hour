@@ -80,4 +80,25 @@
 // },2000)
 // console.log("3rd");
 
+const express = require("express")
+
+const app = express();
+
+
+app.get('',(req,res)=>{
+    res.send("Welcome to Main page")
+})
+
+app.get("/home",(req,res)=>{
+    res.send("Welcome to home page")
+})
+
+app.get('/help',(req,res)=>{
+    res.send("Welcome to help page")
+})
+
+app.get("/about-us",(req,res)=>{
+    res.send("Welcome to about-us page")
+})
+
 
