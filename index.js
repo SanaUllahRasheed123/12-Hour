@@ -67,13 +67,24 @@
 //     res.end();
 // }).listen(5000)
 
-console.log("start logic")
+
+//async behaviour of node js
+// console.log("start logic")
+
+// setTimeout(()=>{
+// console.log("middle logic")
+
+// },2000)
+// console.log("3rd logic")
+
+let a = 10;
+let b = 0;
 
 setTimeout(()=>{
-console.log("middle logic")
-
+    b=20;
 },2000)
-console.log("3rd logic")
+
+console.log(a+b)
 
 
 
