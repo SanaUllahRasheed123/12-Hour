@@ -180,3 +180,6 @@ app.listen(5000)
 
 //monogDB started
 
+//basic command of mongo db done
+
+
