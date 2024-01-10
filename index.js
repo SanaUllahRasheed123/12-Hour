@@ -133,7 +133,8 @@ app.get('/profile',(_,res)=>{
     const user = {
         name:"sanaullah",
         city:"lahore",
-        email:"sanaullahrasheed3@gmail.com"
+        email:"sanaullahrasheed3@gmail.com",
+        skills:['html', 'css', 'java', 'php']
 
     }
     res.render('profile',{user})
