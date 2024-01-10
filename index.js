@@ -112,27 +112,68 @@
 // app.listen(5000);
 
 
+// const express = require('express')
+// const path = require("path")
+
+
+// const app = express();
+
+// const publicPath = path.join(__dirname,'public');
+
+
+// // app.use(express.static(publicPath));
+// app.get('',(_,res)=>{
+//     res.sendFile(`${publicPath}/index.html`)
+// })
+
+// app.get('/about',(_,res)=>{
+//     res.sendFile(`${publicPath}/about.html`)
+// })
+
+// app.get('/help',(_,res)=>{
+//     res.sendFile(`${publicPath}/help.html`)
+// })
+// app.listen(5000)
+
+
+/************Middle ware*/
 const express = require('express')
-const path = require("path")
-
-
+const reqFilter = require('./middleware')
 const app = express();
+const route = express.Router();
 
-const publicPath = path.join(__dirname,'public');
 
 
-// app.use(express.static(publicPath));
-app.get('',(_,res)=>{
-    res.sendFile(`${publicPath}/index.html`)
+// app.use(reqFilter)
+route.use(reqFilter);
+
+app.get('/',(req,res)=>{
+    res.send('Welcome to Home Page')
 })
 
-app.get('/about',(_,res)=>{
-    res.sendFile(`${publicPath}/about.html`)
+app.get('/users',(req,res)=>{
+    res.send('Welcome to User page')
 })
 
-app.get('/help',(_,res)=>{
-    res.sendFile(`${publicPath}/help.html`)
+app.get('/about',(req,res)=>{
+    res.send('Welcome to About Us page')
 })
+
+app.get('/help',(req,res)=>{
+    res.send('Welcome to Help page')
+})
+
+
+route.get('/menu',(req,res)=>{
+    res.send('Welcome to menu page')
+})
+
+route.get('/contact',(req,res)=>{
+    res.send('Welcome to contact page')
+})
+
+
+
+app.use('/',route)
 app.listen(5000)
-
 
