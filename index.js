@@ -112,47 +112,80 @@
 // app.listen(5000);
 
 
-const express = require('express')
-const path = require("path")
+// const express = require('express')
+// const path = require("path")
 
+
+// const app = express();
+
+// const publicPath = path.join(__dirname,'public');
+
+// app.set('view engine','ejs');
+// // app.use(express.static(publicPath));
+
+
+// app.get('',(_,res)=>{
+//     res.sendFile(`${publicPath}/index.html`)
+// })
+
+// app.get('/profile',(_,res)=>{
+
+//     const user = {
+//         name:"sanaullah",
+//         city:"lahore",
+//         email:"sanaullahrasheed3@gmail.com",
+//         skills:['html', 'css', 'java', 'php']
+
+//     }
+//     res.render('profile',{user})
+// })
+
+// app.get('/login',(_,res)=>{
+//     res.render('login');
+// })
+
+
+
+// app.get('/about',(_,res)=>{
+//     res.sendFile(`${publicPath}/about.html`)
+// })
+
+// app.get('/help',(_,res)=>{
+//     res.sendFile(`${publicPath}/help.html`)
+// })
+// app.listen(5000)
+
+
+
+const express = require('express')
 
 const app = express();
 
-const publicPath = path.join(__dirname,'public');
+const reqFilter = (req,res,next)=>{
+   console.log(reqFilter)
+   if(!req.query.age){
+    res.send("Please provide your age")
+   }
+next();
 
-app.set('view engine','ejs');
-// app.use(express.static(publicPath));
+}
 
+app.use(reqFilter)
 
-app.get('',(_,res)=>{
-    res.sendFile(`${publicPath}/index.html`)
+app.get('/',(req,res)=>{
+    res.send('Welcome to Home Page')
 })
 
-app.get('/profile',(_,res)=>{
-
-    const user = {
-        name:"sanaullah",
-        city:"lahore",
-        email:"sanaullahrasheed3@gmail.com",
-        skills:['html', 'css', 'java', 'php']
-
-    }
-    res.render('profile',{user})
+app.get('/users',(req,res)=>{
+    res.send('Welcome to User page')
 })
 
-app.get('/login',(_,res)=>{
-    res.render('login');
+app.get('/about',(req,res)=>{
+    res.send('Welcome to About Us page')
 })
 
 
 
-app.get('/about',(_,res)=>{
-    res.sendFile(`${publicPath}/about.html`)
-})
-
-app.get('/help',(_,res)=>{
-    res.sendFile(`${publicPath}/help.html`)
-})
 app.listen(5000)
 
 
