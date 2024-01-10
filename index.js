@@ -160,16 +160,18 @@
 const express = require('express')
 const reqFilter = require('./middleware')
 const app = express();
+const route = express.Router();
 
 
 
 // app.use(reqFilter)
+route.use(reqFilter);
 
 app.get('/',(req,res)=>{
     res.send('Welcome to Home Page')
 })
 
-app.get('/users',reqFilter,(req,res)=>{
+app.get('/users',(req,res)=>{
     res.send('Welcome to User page')
 })
 
@@ -177,19 +179,22 @@ app.get('/about',(req,res)=>{
     res.send('Welcome to About Us page')
 })
 
-app.get('/help', reqFilter,(req,res)=>{
+app.get('/help',(req,res)=>{
     res.send('Welcome to Help page')
 })
 
 
-app.get('/menu',(req,res)=>{
+route.get('/menu',(req,res)=>{
     res.send('Welcome to menu page')
+})
+
+route.get('/contact',(req,res)=>{
+    res.send('Welcome to contact page')
 })
 
 
 
-
-
+app.use('/',route)
 app.listen(5000)
 
 
