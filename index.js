@@ -133,6 +133,10 @@ app.get('/about',(_,res)=>{
 app.get('/help',(_,res)=>{
     res.sendFile(`${publicPath}/help.html`)
 })
+
+app.get('*',(_,res)=>{
+    res.sendFile(`${publicPath}/404.html`)
+})
 app.listen(5000)
 
 
