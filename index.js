@@ -129,7 +129,14 @@ app.get('',(_,res)=>{
 })
 
 app.get('/profile',(_,res)=>{
-    res.render('profile')
+
+    const user = {
+        name:"sanaullah",
+        city:"lahore",
+        email:"sanaullahrasheed3@gmail.com"
+
+    }
+    res.render('profile',{user})
 })
 
 
