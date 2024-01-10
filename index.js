@@ -176,19 +176,30 @@ const reqFilter = (req,res,next)=>{
 
 }
 
-app.use(reqFilter)
+// app.use(reqFilter)
 
 app.get('/',(req,res)=>{
     res.send('Welcome to Home Page')
 })
 
-app.get('/users',(req,res)=>{
+app.get('/users',reqFilter,(req,res)=>{
     res.send('Welcome to User page')
 })
 
 app.get('/about',(req,res)=>{
     res.send('Welcome to About Us page')
 })
+
+app.get('/help', reqFilter,(req,res)=>{
+    res.send('Welcome to Help page')
+})
+
+
+app.get('/menu',(req,res)=>{
+    res.send('Welcome to menu page')
+})
+
+
 
 
 
