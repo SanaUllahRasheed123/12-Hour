@@ -162,11 +162,17 @@ const express = require('express')
 const app = express();
 
 const reqFilter = (req,res,next)=>{
-   console.log(reqFilter)
+//    console.log(reqFilter)
    if(!req.query.age){
     res.send("Please provide your age")
    }
-next();
+   else if(req.query.age<=18){
+    res.send("You cannot access this site")
+   }
+   else{
+    next();
+
+   }
 
 }
 
