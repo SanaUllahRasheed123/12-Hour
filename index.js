@@ -120,11 +120,19 @@ const app = express();
 
 const publicPath = path.join(__dirname,'public');
 
-
+app.set('view engine','ejs');
 // app.use(express.static(publicPath));
+
+
 app.get('',(_,res)=>{
     res.sendFile(`${publicPath}/index.html`)
 })
+
+app.get('/profile',(_,res)=>{
+    res.render('profile')
+})
+
+
 
 app.get('/about',(_,res)=>{
     res.sendFile(`${publicPath}/about.html`)
