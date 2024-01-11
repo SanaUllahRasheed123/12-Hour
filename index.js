@@ -137,45 +137,45 @@
 
 
 /************Middle ware*/
-const express = require('express')
-const reqFilter = require('./middleware')
-const app = express();
-const route = express.Router();
+// const express = require('express')
+// const reqFilter = require('./middleware')
+// const app = express();
+// const route = express.Router();
 
 
 
 // app.use(reqFilter)
-route.use(reqFilter);
+// route.use(reqFilter);
 
-app.get('/',(req,res)=>{
-    res.send('Welcome to Home Page')
-})
+// app.get('/',(req,res)=>{
+//     res.send('Welcome to Home Page')
+// })
 
-app.get('/users',(req,res)=>{
-    res.send('Welcome to User page')
-})
+// app.get('/users',(req,res)=>{
+//     res.send('Welcome to User page')
+// })
 
-app.get('/about',(req,res)=>{
-    res.send('Welcome to About Us page')
-})
+// app.get('/about',(req,res)=>{
+//     res.send('Welcome to About Us page')
+// })
 
-app.get('/help',(req,res)=>{
-    res.send('Welcome to Help page')
-})
-
-
-route.get('/menu',(req,res)=>{
-    res.send('Welcome to menu page')
-})
-
-route.get('/contact',(req,res)=>{
-    res.send('Welcome to contact page')
-})
+// app.get('/help',(req,res)=>{
+//     res.send('Welcome to Help page')
+// })
 
 
+// route.get('/menu',(req,res)=>{
+//     res.send('Welcome to menu page')
+// })
 
-app.use('/',route)
-app.listen(5000)
+// route.get('/contact',(req,res)=>{
+//     res.send('Welcome to contact page')
+// })
+
+
+
+// app.use('/',route)
+// app.listen(5000)
 
 
 //monogDB started
@@ -188,4 +188,19 @@ app.listen(5000)
 
 //i have done
 
+const {MongoClient} = require("mongodb")
+const url = 'mongodb://localhost:27017';
 
+const database = 'e-comm'
+const client = new MongoClient(url);
+
+async  function getData()
+{
+    let result = await client.connect();
+    let db = result.db(database);
+    let collection = db.collection('products');
+    console.log(collection.find({}).toArray())
+
+}
+
+getData();
