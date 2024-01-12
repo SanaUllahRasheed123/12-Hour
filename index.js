@@ -188,19 +188,68 @@
 
 //i have done
 
-const {MongoClient} = require("mongodb")
-const url = 'mongodb://localhost:27017';
+// const {MongoClient} = require("mongodb")
+// const url = 'mongodb://localhost:27017';
 
+// const database = 'e-comm'
+// const client = new MongoClient(url);
+
+// async  function getData()
+// {
+//     let result = await client.connect();
+//     let db = result.db(database);
+//     let collection = db.collection('products');
+//     console.log(collection.find({}).toArray())
+
+// }
+
+// getData();
+
+
+// const { MongoClient } = require("mongodb");
+
+// const url = 'mongodb://localhost:27017';
+// const database = 'e-comm';
+// const client = new MongoClient(url);
+
+// async function getData() {
+//     try {
+//         await client.connect();
+//         const db = client.db(database);
+//         const collection = db.collection('products');
+//         const result = await collection.find({}).toArray();
+//         console.log(result);
+//     } finally {
+//         await client.close();
+//     }
+// }
+
+// getData();
+
+const {MongoClient} = require('mongodb')
+const url = 'mongodb://127.0.0.1:27017';
 const database = 'e-comm'
 const client = new MongoClient(url);
 
-async  function getData()
-{
-    let result = await client.connect();
-    let db = result.db(database);
-    let collection = db.collection('products');
-    console.log(collection.find({}).toArray())
 
+ async function getData()
+{
+    let result =  await client.connect();
+   let db= result.db(database);
+   let collection = db.collection('products');
+    let response = await collection.find({}).toArray();
+   console.log(response)
 }
 
 getData();
+
+
+
+
+
+
+
+
+
+
+
