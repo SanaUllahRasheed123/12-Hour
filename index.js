@@ -232,16 +232,26 @@ const database = 'e-comm'
 const client = new MongoClient(url);
 
 
- async function getData()
+ async function dbConnect()
 {
     let result =  await client.connect();
-   let db= result.db(database);
-   let collection = db.collection('products');
-    let response = await collection.find({name:"Sana Ullah"}).toArray();
-   console.log(response)
+   db= result.db(database);
+   return db.collection('products');
+//     let response = await collection.find({name:"Sana Ullah"}).toArray();
+//    console.log(response)
 }
 
-getData();
+dbConnect().then((res)=>{
+    res.find({}).toArray().then((data)=>{
+        console.warn(data)
+    })
+})
+
+// const main = ()=>{
+//     console.log("main function called")
+// }
+
+//console.warn(dbConnect)
 
 // const {MongoClient} = require("mongodb");
 // const url = 'mongodb://127.0.0.1:27017';
