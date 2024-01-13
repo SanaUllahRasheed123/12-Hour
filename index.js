@@ -226,6 +226,7 @@
 
 // getData();
 
+
 const {MongoClient} = require('mongodb')
 const url = 'mongodb://127.0.0.1:27017';
 const database = 'e-comm'
@@ -237,21 +238,24 @@ const client = new MongoClient(url);
     let result =  await client.connect();
    db= result.db(database);
    return db.collection('products');
-//     let response = await collection.find({name:"Sana Ullah"}).toArray();
-//    console.log(response)
+
+}
+// dbConnect().then((res)=>{
+//     res.find({}).toArray().then((data)=>{
+//         console.warn(data)
+//     })
+// })
+
+const main = async ()=>{
+    // console.log("main function called")
+    let data = await dbConnect();
+    data = await data.find().toArray();
+    console.warn(data)
 }
 
-dbConnect().then((res)=>{
-    res.find({}).toArray().then((data)=>{
-        console.warn(data)
-    })
-})
+main();
 
-// const main = ()=>{
-//     console.log("main function called")
-// }
-
-//console.warn(dbConnect)
+// console.warn(dbConnect)
 
 // const {MongoClient} = require("mongodb");
 // const url = 'mongodb://127.0.0.1:27017';
