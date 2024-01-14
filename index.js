@@ -264,6 +264,8 @@ dbConnect().then((res)=>{
 
 // main();
 
+//inserting data 
+
 
 
 
