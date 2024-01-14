@@ -1,5 +1,6 @@
 
-const dbConnect = require('./mongodb')
+const insert = require('./insert');
+const dbConnect = require('./db')
 
 // dbConnect().then((res)=>{
 //     res.find().toArray().then((data)=>{
@@ -9,8 +10,10 @@ const dbConnect = require('./mongodb')
 
 const main = async () =>{
     // console.log("main function called");
-    let data = await dbConnect();
-    data = await data.find().toArray();
-    console.warn(data)
+    let db = await dbConnect();
+    db = await db.find().toArray();
+    console.warn(db)
 }
+   
 main();
+insert();
