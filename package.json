@@ -2,10 +2,10 @@
   "name": "12-hour",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "delete.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon delete.js"
   },
   "author": "",
   "license": "ISC",
