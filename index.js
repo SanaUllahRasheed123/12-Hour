@@ -269,6 +269,7 @@ dbConnect().then((res)=>{
 //inset data from mongodb
 //make a new file
 //import mongodb connection
+//insert single and multiple records
 
 
 
