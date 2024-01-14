@@ -266,6 +266,8 @@ dbConnect().then((res)=>{
 
 //inserting data 
 // may be it worked
+//inset data from mongodb
+//make a new file
 
 
 
