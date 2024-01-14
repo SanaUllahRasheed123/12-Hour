@@ -273,6 +273,7 @@ dbConnect().then((res)=>{
 //interview question
 // worked with mongodb
 //faced many problems and issue
+//worked with insert , update and delete 
 
 
 
