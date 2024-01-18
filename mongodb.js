@@ -9,3 +9,5 @@ async function dbConnect(){
     let db = result.db(database);
      return db.collection('products');
 }
+
+module.exports = dbConnect;
