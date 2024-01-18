@@ -226,26 +226,26 @@
 
 // getData();
 
-const {MongoClient} = require('mongodb')
-const url = 'mongodb://127.0.0.1:27017';
-const database = 'e-comm'
-const client = new MongoClient(url);
+// const {MongoClient} = require('mongodb')
+// const url = 'mongodb://127.0.0.1:27017';
+// const database = 'e-comm'
+// const client = new MongoClient(url);
 
 
- async function dbConnect()
-{
-    let result =  await client.connect();
-   db= result.db(database);
-   return db.collection('products');
-//     let response = await collection.find({name:"Sana Ullah"}).toArray();
-//    console.log(response)
-}
+//  async function dbConnect()
+// {
+//     let result =  await client.connect();
+//    db= result.db(database);
+//    return db.collection('products');
+// //     let response = await collection.find({name:"Sana Ullah"}).toArray();
+// //    console.log(response)
+// }
 
-dbConnect().then((res)=>{
-    res.find({}).toArray().then((data)=>{
-        console.warn(data)
-    })
-})
+// dbConnect().then((res)=>{
+//     res.find({}).toArray().then((data)=>{
+//         console.warn(data)
+//     })
+// })
 
 // const main = ()=>{
 //     console.log("main function called")
@@ -283,6 +283,36 @@ dbConnect().then((res)=>{
 
 
 
+
+const {MongoClient} = require('mongodb');
+const url = 'mongodb://127.0.0.1:27017';
+const client = new MongoClient(url);
+const database = 'e-comm';
+
+
+async function dbConnect(){
+    let result= await client.connect();
+    let db = result.db(database);
+     return db.collection('products');
+    // let data = await collection.find({}).toArray()
+    // console.log(data)
+
+}
+
+// console.log(main());
+// dbConnect().then((res)=>{
+//     res.find().toArray().then((data)=>{
+//         console.log(data)
+//     })
+// })
+
+// const main = async () =>{
+//     let data = await dbConnect();
+//     data = await data.find().toArray();
+//     console.log(data)
+// }
+
+// main();
 
 
 
