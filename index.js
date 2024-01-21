@@ -12,7 +12,6 @@
 
 // // console.log(app.z)
 
-
 // const fs = require('fs')
 
 // fs.writeFileSync("new.txt","Hello Sana Ulllah Rasheed")
@@ -25,7 +24,6 @@
 //     res.write("Hello this is Sana Ullah ");
 //     res.end();
 // }).listen(4500);
-
 
 // const http = require("http")
 
@@ -41,9 +39,8 @@
 //     res.end();
 // }).listen(4500);
 
-
 // var colors = require('colors');
- 
+
 // console.log('hello'.green); // outputs green text
 // console.log('i like cake and pies'.underline.red) // outputs red underlined text
 // console.log('inverse the color'.inverse); // inverses the color
@@ -55,9 +52,7 @@
 // console.log("i'm happy ")
 // console.log("i'm happy thank your ")
 
-
 // console.log('hello'.green); // outputs green text
-
 
 //
 // const http = require("http")
@@ -68,8 +63,6 @@
 //     res.write(JSON.stringify(data))
 //     res.end();
 // }).listen(5000)
-
-
 
 //how nodejs works
 // console.log("1st");
@@ -83,7 +76,6 @@
 // const express = require("express")
 
 // const app = express();
-
 
 // app.get('',(req,res)=>{
 //     // console.log("data sent by --->>>",req.query.name)
@@ -111,15 +103,12 @@
 
 // app.listen(5000);
 
-
 // const express = require('express')
 // const path = require("path")
-
 
 // const app = express();
 
 // const publicPath = path.join(__dirname,'public');
-
 
 // // app.use(express.static(publicPath));
 // app.get('',(_,res)=>{
@@ -135,14 +124,11 @@
 // })
 // app.listen(5000)
 
-
 /************Middle ware*/
 // const express = require('express')
 // const reqFilter = require('./middleware')
 // const app = express();
 // const route = express.Router();
-
-
 
 // app.use(reqFilter)
 // route.use(reqFilter);
@@ -163,7 +149,6 @@
 //     res.send('Welcome to Help page')
 // })
 
-
 // route.get('/menu',(req,res)=>{
 //     res.send('Welcome to menu page')
 // })
@@ -172,11 +157,8 @@
 //     res.send('Welcome to contact page')
 // })
 
-
-
 // app.use('/',route)
 // app.listen(5000)
-
 
 //monogDB started
 
@@ -184,7 +166,6 @@
 
 //crud operations working
 //crud operations done
-
 
 //i have done
 
@@ -204,7 +185,6 @@
 // }
 
 // getData();
-
 
 // const { MongoClient } = require("mongodb");
 
@@ -230,7 +210,6 @@
 // const url = 'mongodb://127.0.0.1:27017';
 // const database = 'e-comm'
 // const client = new MongoClient(url);
-
 
 //  async function dbConnect()
 // {
@@ -264,7 +243,7 @@
 
 // main();
 
-//inserting data 
+//inserting data
 // may be it worked
 //inset data from mongodb
 //make a new file
@@ -273,38 +252,125 @@
 //interview question
 // worked with mongodb
 //faced many problems and issue
-//worked with insert , update and delete 
+//worked with insert , update and delete
 //spen more than 5 hours , almost 6
 //crud done
 // مجھے اس بات کی یقین دہانی کروائی جائے کے مجھے اس بار فیل نہیں کیا جا ئے گا۔۔۔
 //یہ فصل امیدوں کی ہم دم اس بار بھی غارت جائے گی
 
+// const dbConnect = require('./mongodb')
+
+// // console.log(main());
+// dbConnect().then((res)=>{
+//     res.find().toArray().then((data)=>{
+//         console.log(data)
+//     })
+// })
+
+// const main = async () =>{
+//     let data = await dbConnect();
+//     data = await data.find().toArray();
+//     console.log(data)
+// }
+
+// main();
+
+// const mongoose = require("mongoose");
+// const ProductSchema = new mongoose.Schema({
+//     name: String,
+//     brand: String,
+//     price: Number,
+//     category: String,
+//   });
+
+// const saveInDB = async () => {
+//   await mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
+ 
+//   const Product = mongoose.model("products", ProductSchema);
+//   let data = new Product({
+//     name: "m8",
+//     price: 2399,
+//     brand: "vivo",
+//     category: "mobile",
+//   });
+//   let result = await data.save();
+//   console.log(result);
+// };
+
+// // main()
+
+// const updateInDB = async () => {
+//   const Product = mongoose.model("products", ProductSchema);
+//   let data = await Product.updateOne(
+//     { name: "Iphone 13" },
+//     {
+//       $set: { name: "Iphone 15" },
+//     }
+//   );
+//   console.log(data);
+// };
+
+// updateInDB();
 
 
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
 
+// Define ProductSchema outside the function
+const ProductSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
 
+  brand: String,
+  category: String,
+});
 
-const dbConnect = require('./mongodb')
+const saveInDB = async () => {
+  
 
+  const Product = mongoose.model("products", ProductSchema);
 
+  let data = new Product({
+    name: "m8",
+    price: 2399,
+    brand: "vivo",
+    category: "mobile",
+  });
 
-// console.log(main());
-dbConnect().then((res)=>{
-    res.find().toArray().then((data)=>{
-        console.log(data)
-    })
-})
+  let result = await data.save();
+  console.log(result);
+};
 
-const main = async () =>{
-    let data = await dbConnect();
-    data = await data.find().toArray();
+// main()
+
+const updateInDB = async () => {
+  // Now ProductSchema is accessible here
+  const Product = mongoose.model("products", ProductSchema);
+
+  let data = await Product.updateOne(
+    { name: "Iphone 15" },
+    {
+      $set: { price: "3989" },
+    }
+  );
+
+  console.log(data);
+};
+
+// updateInDB();
+
+const deleteInDB = async () =>{
+    const Product = mongoose.model('products',ProductSchema);
+    let data = await Product.deleteOne({name:'max 8'});
     console.log(data)
 }
 
-main();
+// deleteInDB();
+const findInDB = async () => {
+    const Product = mongoose.model('products',ProductSchema);
+    let data = await Product.find({price: 3320});
+    console.log(data)
+}
 
-
-
-
-
+findInDB();
 

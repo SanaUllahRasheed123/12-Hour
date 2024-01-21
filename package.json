@@ -2,10 +2,10 @@
   "name": "12-hour",
   "version": "1.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon api.js"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
