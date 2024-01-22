@@ -313,64 +313,80 @@
 // updateInDB();
 
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
 
-// Define ProductSchema outside the function
-const ProductSchema = new mongoose.Schema({
-  name: String,
-  price: Number,
+// // Define ProductSchema outside the function
+// const ProductSchema = new mongoose.Schema({
+//   name: String,
+//   price: Number,
 
-  brand: String,
-  category: String,
-});
+//   brand: String,
+//   category: String,
+// });
 
-const saveInDB = async () => {
+// const saveInDB = async () => {
   
 
-  const Product = mongoose.model("products", ProductSchema);
+//   const Product = mongoose.model("products", ProductSchema);
 
-  let data = new Product({
-    name: "m8",
-    price: 2399,
-    brand: "vivo",
-    category: "mobile",
-  });
+//   let data = new Product({
+//     name: "m8",
+//     price: 2399,
+//     brand: "vivo",
+//     category: "mobile",
+//   });
 
-  let result = await data.save();
-  console.log(result);
-};
+//   let result = await data.save();
+//   console.log(result);
+// };
 
-// main()
+// // main()
 
-const updateInDB = async () => {
-  // Now ProductSchema is accessible here
-  const Product = mongoose.model("products", ProductSchema);
+// const updateInDB = async () => {
+//   // Now ProductSchema is accessible here
+//   const Product = mongoose.model("products", ProductSchema);
 
-  let data = await Product.updateOne(
-    { name: "Iphone 15" },
-    {
-      $set: { price: "3989" },
-    }
-  );
+//   let data = await Product.updateOne(
+//     { name: "Iphone 15" },
+//     {
+//       $set: { price: "3989" },
+//     }
+//   );
 
-  console.log(data);
-};
+//   console.log(data);
+// };
 
-// updateInDB();
+// // updateInDB();
 
-const deleteInDB = async () =>{
-    const Product = mongoose.model('products',ProductSchema);
-    let data = await Product.deleteOne({name:'max 8'});
-    console.log(data)
-}
+// const deleteInDB = async () =>{
+//     const Product = mongoose.model('products',ProductSchema);
+//     let data = await Product.deleteOne({name:'max 8'});
+//     console.log(data)
+// }
 
-// deleteInDB();
-const findInDB = async () => {
-    const Product = mongoose.model('products',ProductSchema);
-    let data = await Product.find({price: 3320});
-    console.log(data)
-}
+// // deleteInDB();
+// const findInDB = async () => {
+//     const Product = mongoose.model('products',ProductSchema);
+//     let data = await Product.find({price: 3320});
+//     console.log(data)
+// }
 
-findInDB();
+// findInDB();
 
+const express = require('express');
+require('./config');
+const Product = require('./product');
+
+const app = express();
+app.use(express.json());
+
+app.post('/create',async(req,res)=>{
+    let data = new Product(req.body);
+    let result = await data.save()
+    console.log(req.body)
+    res.send(result);
+
+});
+
+app.listen(3030);
