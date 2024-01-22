@@ -389,4 +389,9 @@ app.post('/create',async(req,res)=>{
 
 });
 
+app.get("/list",async(req,res)=>{
+    let data = await Product.find();
+    res.send(data)
+})
+
 app.listen(3030);
