@@ -394,4 +394,22 @@ app.get("/list",async(req,res)=>{
     res.send(data)
 })
 
-app.listen(3030);
+app.delete('/delete/:id',async (req,res)=>{
+    console.log(req.params)
+    let data = await Product.deleteOne(req.params);
+
+    res.send(data);
+})
+
+app.put('/update/:id',async (req,res)=>{
+    console.log(req.params)
+    let data = await Product.updateOne(
+        res.params,
+        {
+            $set: req.body
+        }
+    );
+    res.send(data)
+})
+
+app.listen(5000);
