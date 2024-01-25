@@ -379,7 +379,12 @@
 
 
 
+// const express = require('express');
+// require('./config');
+// const Product = require('./product');
 
+// const app = express();
+// app.use(express.json());
 // app.post('/create',async(req,res)=>{
 //     let data = new Product(req.body);
 //     let result = await data.save()
@@ -412,24 +417,25 @@
 // })
 
 
-const express = require('express');
-require('./config');
-const Product = require('./product');
+// const express = require('express');
+// require('./config');
+// const Product = require('./product');
 
-const app = express();
-app.use(express.json());
+// const app = express();
+// app.use(express.json());
 
-app.get('/search/:key', async(req,res)=>{
-    console.log(req.params.key)
-    let data = await Product.find(
-        {
-            "$or":[
-                { "name":{$regex:req.params.key}},
-                {"brand":{$regex:req.params.key}}
-            ]
-        }
-    )
-    res.send(data)
-})
+// app.get('/search/:key', async(req,res)=>{
+//     console.log(req.params.key)
+//     let data = await Product.find(
+//         {
+//             "$or":[
+//                 { "name":{$regex:req.params.key}},
+//                 {"brand":{$regex:req.params.key}}
+//             ]
+//         }
+//     )
+//     res.send(data)
+// })
 
-app.listen(5000);
+// app.listen(5000);
+
