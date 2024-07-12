@@ -1,3 +1,16 @@
+// const arr = [
+//   3, 54, 6, 4, 3, 5, 6, 7, 55, 54, 354, 3, 4, 5, 4, 35, 65, 7, 8, 7, 3,
+// ];
+
+// console.log(
+//   arr.filter((item) => {
+//     return item < 54;
+//   })
+// );
+
+const fs = require("fs").writeFileSync;
+
+fs("hello1.txt", "Node js ");
 // const app = require("./lib")
 
 // const arr = [2,4,7,1,3,8,3];
@@ -285,7 +298,7 @@
 
 // const saveInDB = async () => {
 //   await mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
- 
+
 //   const Product = mongoose.model("products", ProductSchema);
 //   let data = new Product({
 //     name: "m8",
@@ -312,7 +325,6 @@
 
 // updateInDB();
 
-
 // const mongoose = require("mongoose");
 // mongoose.connect("mongodb://127.0.0.1:27017/e-comm");
 
@@ -326,7 +338,6 @@
 // });
 
 // const saveInDB = async () => {
-  
 
 //   const Product = mongoose.model("products", ProductSchema);
 
@@ -377,8 +388,6 @@
 //hehe
 //uiu ok
 
-
-
 // const express = require('express');
 // require('./config');
 // const Product = require('./product');
@@ -416,7 +425,6 @@
 //     res.send(data)
 // })
 
-
 // const express = require('express');
 // require('./config');
 // const Product = require('./product');
@@ -439,7 +447,6 @@
 
 // app.listen(5000);
 
-
 //multer done
 
 // const express = require('express')
@@ -457,7 +464,7 @@
 //             cb(null,file.fieldname+"-"+Date.now()+'.jpeg')
 //         }
 //     })
-   
+
 // }).single("user_file")
 // app.post('/upload',upload,(req,res)=>{
 //     res.send("file upload")
@@ -465,9 +472,7 @@
 
 // app.listen(5000)
 
-
 //os module started
-
 
 // const os = require('os')
 // console.log(os.arch())
@@ -477,44 +482,37 @@
 // console.log(os.platform())
 // console.log(os.userInfo())
 
-
-
 //Events and Event Emitter in Node Js
 
-const express = require('express');
+// const express = require('express');
 
-const EventEmitter = require('events');
-const app = express()
+// const EventEmitter = require('events');
+// const app = express()
 
-const event = new EventEmitter();
+// const event = new EventEmitter();
 
+// let count =0;
 
-let count =0;
+// event.on('countAPI',()=>{
+//     count++;
+//     console.log('event called',count)
+// })
 
-event.on('countAPI',()=>{
-    count++;
-    console.log('event called',count)
-})
+// app.get('/',(req,res)=>{
+//     res.send("api called")
+//     event.emit('countAPI');
+// })
 
+// app.get('/search',(req,res)=>{
+//     res.send("search api called")
+//     event.emit('countAPI');
 
-app.get('/',(req,res)=>{
-    res.send("api called")
-    event.emit('countAPI');
-})
+// })
 
-app.get('/search',(req,res)=>{
-    res.send("search api called")
-    event.emit('countAPI');
+// app.get('/update',(req,res)=>{
+//     res.send("update api called")
+//     event.emit('countAPI');
 
-})
+// })
 
-app.get('/update',(req,res)=>{
-    res.send("update api called")
-    event.emit('countAPI');
-
-})
-
-
-
-app.listen(5000)
-
+// app.listen(5000)
