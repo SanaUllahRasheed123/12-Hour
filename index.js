@@ -8,10 +8,51 @@
 //   })
 // );
 
-const fs = require("fs").writeFileSync;
+// const fs = require("fs").writeFileSync;
 
-fs("hello1.txt", "Node js ");
+// fs("hello1.txt", "Node js ");
+
+// const http = require("http");
+
+// function controlG(req, res) {
+//   res.write("<p></p>Hello This is Sana Ullah from port 4500.</p>");
+//   res.end();
+// }
+// http.createServer(controlG).listen(4500);
 // const app = require("./lib")
+
+// const colors = require("colors");
+
+// console.log("packge.json".bgBlue);
+// console.log("fhkdsj");
+
+// const data = require("./data"
+
+// );
+// const http = require("http");
+
+// http
+//   .createServer((req, res) => {
+//     res.writeHead(200, { "Content-Type": "applicationjson" });
+//     res.write(JSON.stringify(data));
+//     res.end();
+//   })
+//   .listen(4500);
+
+const express = require("express");
+
+const app = express();
+
+app.get("", (req, res) => {
+  console.log("Welcome to barira ", req.query.name);
+  res.send(`Helllo ${req.query.name}`);
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is Home Page");
+});
+
+app.listen(4000);
 
 // const arr = [2,4,7,1,3,8,3];
 
