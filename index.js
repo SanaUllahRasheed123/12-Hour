@@ -43,13 +43,25 @@ const express = require("express");
 
 const app = express();
 
-app.get("", (req, res) => {
-  console.log("Welcome to barira ", req.query.name);
-  res.send(`Helllo ${req.query.name}`);
+app.get("/", (req, res) => {
+  res.send(`<h1>Helllo</h1><a href="/about">Go to about us page</a>`);
 });
 
 app.get("/about", (req, res) => {
-  res.send("This is Home Page");
+  res.send(
+    `<input type="text" placholder="Enter your text" value="${req.query.name}"/>`
+  );
+});
+
+app.get("/help", (req, res) => {
+  res.send(`<button href="/">Click me</button>`);
+});
+
+app.get("/json", (req, res) => {
+  res.send([
+    { name: "Ahmad", email: "sanaullahrasheed3@gmail.com" },
+    { name: "user1", email: "sanaullahrasheed3@gmail.com" },
+  ]);
 });
 
 app.listen(4000);
