@@ -111,14 +111,18 @@ const reqFilter1 = (req, res, next) => {
   next();
 };
 
-app.use(reqFilter1);
+// app.use(reqFilter1);
 
-app.get("/", (req, res) => {
+app.get("/", reqFilter1, (req, res) => {
   res.send("Welcome to home page");
 });
 
-app.get("/about", (req, res) => {
+app.get("/about", reqFilter1, (req, res) => {
   res.send("Welcome to about us page");
+});
+
+app.get("/help", (req, res) => {
+  res.send("How May we hwlp you!");
 });
 
 app.listen(5000);
