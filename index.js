@@ -39,32 +39,65 @@
 //   })
 //   .listen(4500);
 
-const express = require("express");
+// const exp = require("constants");
+// const express = require("express");
+// const path = require("path");
+// const ejs = require("ejs");
 
-const app = express();
+// const app = express();
 
-app.get("/", (req, res) => {
-  res.send(`<h1>Helllo</h1><a href="/about">Go to about us page</a>`);
-});
+// const publicPath1 = path.join(__dirname, "public");
 
-app.get("/about", (req, res) => {
-  res.send(
-    `<input type="text" placholder="Enter your text" value="${req.query.name}"/>`
-  );
-});
+// app.use(express.static(publicPath1));
+// app.set("view engine", "ejs");
 
-app.get("/help", (req, res) => {
-  res.send(`<button href="/">Click me</button>`);
-});
+// app.get("", (req, res) => {
+//   res.sendFile(`${publicPath1}/index.html`);
+// });
 
-app.get("/json", (req, res) => {
-  res.send([
-    { name: "Ahmad", email: "sanaullahrasheed3@gmail.com" },
-    { name: "user1", email: "sanaullahrasheed3@gmail.com" },
-  ]);
-});
+// app.get("/profile", (req, res) => {
+//   const user = {
+//     name: "Ahmad",
+//     email: "esfkaj@test.com",
+//     city: "Lahore",
+//   };
+//   res.render("profile", { user });
+// });
 
-app.listen(4000);
+// app.get("/about", (req, res) => {
+//   res.sendFile(`${publicPath1}/about.html`);
+// });
+
+// app.get("/help", (req, res) => {
+//   res.sendFile(`${publicPath1}/help.html`);
+// });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(`${publicPath1}/nopage.html`);
+// });
+
+// app.get("/", (req, res) => {
+//   res.send(`<h1>Helllo</h1><a href="/about">Go to about us page</a>`);
+// });
+
+// app.get("/about", (req, res) => {
+//   res.send(
+//     `<input type="text" placholder="Enter your text" value="${req.query.name}"/>`
+//   );
+// });
+
+// app.get("/help", (req, res) => {
+//   res.send(`<button href="/">Click me</button>`);
+// });
+
+// app.get("/json", (req, res) => {
+//   res.send([
+//     { name: "Ahmad", email: "sanaullahrasheed3@gmail.com" },
+//     { name: "user1", email: "sanaullahrasheed3@gmail.com" },
+//   ]);
+// });
+
+app.listen(4500);
 
 // const arr = [2,4,7,1,3,8,3];
 
