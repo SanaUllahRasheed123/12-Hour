@@ -97,7 +97,31 @@
 //   ]);
 // });
 
-app.listen(4500);
+// app.listen(4500);
+
+const express = require("express");
+const app = express();
+
+const reqFilter1 = (req, res, next) => {
+  if (!req.query.age) {
+    res.send("Please provide age");
+  } else if (req.query.age < 18) {
+    res.send("You cannot access this page");
+  }
+  next();
+};
+
+app.use(reqFilter1);
+
+app.get("/", (req, res) => {
+  res.send("Welcome to home page");
+});
+
+app.get("/about", (req, res) => {
+  res.send("Welcome to about us page");
+});
+
+app.listen(5000);
 
 // const arr = [2,4,7,1,3,8,3];
 
